@@ -1,0 +1,43 @@
+import mongoose from 'mongoose';
+//import { Role } from './Role.js';
+
+const userProfileSchema = new mongoose.Schema({
+  firstName: { type: String, required: true, trim: true },
+    lastName: { type: String, required: true, trim: true },
+    dateOfBirth: { type: Date },
+    email: { type: String, required: true, trim: true, lowercase: true },
+    phone: { type: String, trim: true },
+    addressLine1: { type: String, trim: true },
+    addressLine2: { type: String, trim: true },
+    city: { type: String, trim: true },
+    province: { type: String, trim: true },
+    postalCode: { type: String, trim: true },
+    country: { type: String, trim: true },
+    customerNumber: { type: String, trim: true },
+    employeeNumber: { type: String, trim: true },
+    userType: { type: String, required: true }
+
+},
+{_id: false}
+);
+
+
+
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
+    passwordHash: { type: String, required: true },
+    roles: [{ type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }],
+    profile: {
+      type: userProfileSchema, required: true
+    },
+  },
+  { timestamps: true }
+);
+
+export const User = mongoose.model('User', userSchema);
