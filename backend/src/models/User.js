@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-//import { Role } from './Role.js';
+import { ACCOUNT_STATUS_VALUES } from "../constants/accountStatuses.js";
 
 const userProfileSchema = new mongoose.Schema({
   firstName: { type: String, required: true, trim: true },
@@ -33,6 +33,12 @@ const userSchema = new mongoose.Schema(
     },
     passwordHash: { type: String, required: true },
     roles: [{ type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }],
+    accountStatus: {
+      type: String,
+      required: true,
+      enum: ACCOUNT_STATUS_VALUES,
+      default: "ACTIVE"
+    },
     profile: {
       type: userProfileSchema, required: true
     },

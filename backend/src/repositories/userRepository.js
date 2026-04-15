@@ -1,9 +1,14 @@
 import { User } from "../models/User.js";
 
-
 export const userRepository = {
   findByUsername(username) {
     return User.findOne({ username }).populate("roles");
+  },
+
+  findByEmail(email) {
+    return User.findOne({
+      "profile.email": String(email).toLowerCase().trim()
+    }).populate("roles");
   },
 
   findById(id) {
@@ -33,5 +38,6 @@ export const userRepository = {
       match: { name: "CUSTOMER" }
     })
     .then(users => users.filter(user => user.roles.length > 0));
-  } 
+  }
+
 };

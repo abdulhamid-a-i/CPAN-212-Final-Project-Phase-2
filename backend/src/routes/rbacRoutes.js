@@ -5,7 +5,6 @@ import { authorizeRoles } from "../middleware/roleMiddleware.js";
 import { assignRolesValidator } from "../validators/rbacValidator.js";
 import { handleValidation } from "../middleware/validationMiddleware.js";
 
-
 const router = Router();
 
 router.get("/roles", authenticate, authorizeRoles("ADMIN"), rbacController.listRoles);

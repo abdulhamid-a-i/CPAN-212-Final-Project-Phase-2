@@ -59,7 +59,7 @@ export const checkoutService = {
     );
 
     if (!updated) {
-      throw new Error("Stock issue: item unavailable");
+      throw new AppError("Stock issue: item unavailable",400);
     }
   }
 

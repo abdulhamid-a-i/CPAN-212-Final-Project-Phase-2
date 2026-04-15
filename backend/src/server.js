@@ -9,7 +9,7 @@ import { validateKeycloakConfig } from "./config/keycloak.js";
 async function startServer() {
   await connectDatabase();
   
- 
+  //const httpsServer = https.createServer(getHttpsOptions(), app);
   const httpsServer = http.createServer(getHttpsOptions(), app);
 
 

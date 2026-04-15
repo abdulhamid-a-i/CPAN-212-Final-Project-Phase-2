@@ -72,7 +72,14 @@ export const shipmentService = {
             contents: contents,
         }
 
-        return shipmentRepository.create({...shipment});
+        const createdShipment = await shipmentRepository.create({...shipment})
+
+        return {
+            shipment: createdShipment,
+            created: created,
+            skipped: skipped
+        
+        };
   
     },
 

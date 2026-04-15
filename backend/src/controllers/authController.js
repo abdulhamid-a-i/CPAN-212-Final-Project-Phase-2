@@ -13,5 +13,14 @@ export const authController = {
 
   health(req, res) {
     return successResponse(res, { status: "UP" }, "Backend healthy");
+  },
+
+  async register(req, res, next){
+    try{
+      const result = await authService.register(req.body);
+      return successResponse(res, result, "Registration successful")
+    } catch (error) {
+      next(error);
+    }
   }
 };
