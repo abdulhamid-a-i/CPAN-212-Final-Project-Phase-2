@@ -8,9 +8,9 @@ import { cartRepository } from "../repositories/cartRepository.js";
 export const checkoutService = {
   async getOrCreateCheckout(userId) {
     let checkout = await checkoutRepository.findByUser(userId);
-
+    let cart = await Cart.findOne({user: userId});
     if (!checkout) {
-        let cart = await Cart.findOne({user: userId});
+        
     if (!cart || !Array.isArray(cart.contents) || cart.contents.length === 0) {
       throw new AppError(
         "Cart is empty. Please add items before proceeding to checkout",
@@ -22,6 +22,15 @@ export const checkoutService = {
        });
 
        return checkoutRepository.findByUser(userId);
+    }
+
+    if(checkout.contents != cart.contents){
+
+       checkout.contents = cart.contents
+       await checkoutRepository.save(checkout)
+
+       return checkoutRepository.findByUser(userId);
+
     }
 
     return checkout;
