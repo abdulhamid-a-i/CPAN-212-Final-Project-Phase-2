@@ -1,0 +1,4193 @@
+{
+  "info": {
+    "_postman_id": "431acfc4-88a7-46cf-bda7-17049c0832b2",
+    "name": "CPAN 212 Final Project Phase 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51584104",
+    "_collection_link": "https://go.postman.co/collection/51584104-431acfc4-88a7-46cf-bda7-17049c0832b2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/auth/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Customer",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"john.doe@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Customer",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "335"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"14f-EUQhHthoaKbdnpw6N8jvcaF2aTc\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 23:55:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Registration successful\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"Jane\",\n            \"roles\": [\n                \"69cb03b5de24f8ec28e57c2b\"\n            ],\n            \"profile\": {\n                \"firstName\": \"Jane\",\n                \"lastName\": \"Doe\",\n                \"email\": \"jane.doe@gmail.com\",\n                \"userType\": \"CUSTOMER\"\n            },\n            \"_id\": \"69dd82818b45c6cba6fa83a0\",\n            \"createdAt\": \"2026-04-13T23:55:45.456Z\",\n            \"updatedAt\": \"2026-04-13T23:55:45.456Z\"\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "customer Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"customer1\",\r\n    \"password\": \"Password123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "admin Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"Password123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "authorized getRoles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/rbac/roles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "rbac",
+            "roles"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "authorized getRoles",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5002/api/admin/rbac/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5002",
+              "path": [
+                "api",
+                "admin",
+                "rbac",
+                "roles"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "602"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"25a-Oavt2cCZfjiY2zBv0JA0UqhSKUE\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 03 Apr 2026 19:05:21 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Roles loaded\",\n    \"data\": [\n        {\n            \"_id\": \"69cb03b5de24f8ec28e57c2e\",\n            \"name\": \"ADMIN\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-03-30T23:13:57.463Z\",\n            \"updatedAt\": \"2026-03-30T23:13:57.463Z\"\n        },\n        {\n            \"_id\": \"69cb03b5de24f8ec28e57c2b\",\n            \"name\": \"CUSTOMER\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-03-30T23:13:57.462Z\",\n            \"updatedAt\": \"2026-03-30T23:13:57.462Z\"\n        },\n        {\n            \"_id\": \"69cb03b5de24f8ec28e57c2c\",\n            \"name\": \"EMPLOYEE\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-03-30T23:13:57.463Z\",\n            \"updatedAt\": \"2026-03-30T23:13:57.463Z\"\n        },\n        {\n            \"_id\": \"69cb03b5de24f8ec28e57c2d\",\n            \"name\": \"MANAGER\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-03-30T23:13:57.463Z\",\n            \"updatedAt\": \"2026-03-30T23:13:57.463Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "unauthorized getRoles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{custToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/rbac/roles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "rbac",
+            "roles"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "unauthorized getRoles",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5002/api/admin/rbac/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5002",
+              "path": [
+                "api",
+                "admin",
+                "rbac",
+                "roles"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "56"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"38-SYORqTxw3aRiZmiyUJaXMEeFsHc\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 03 Apr 2026 19:05:31 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"errors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "List books",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books?q=&limit=1&page=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "books"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": ""
+            },
+            {
+              "key": "limit",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "page",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Book",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"9780743437318\",\r\n    \"title\": \"Pendragon: The Merchant of Death\",\r\n    \"author\": \"D.J. MacHale\",\r\n    \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\r\n    \"genre\": \"fiction\",\r\n    \"publishedDate\": \"09/01/2002\",\r\n    \"quantity\": 53,\r\n    \"price\": 14.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Book",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"9780743437318\",\r\n    \"title\": \"Pendragon: The Merchant of Death\",\r\n    \"author\": \"D.J. MacHale\",\r\n    \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\r\n    \"genre\": \"fiction\",\r\n    \"publishedDate\": \"09/01/2002\",\r\n    \"quantity\": 53,\r\n    \"price\": 14.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1375"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"55f-dxfoNjo/G5ennn7fd/m3UpUdGBY\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 17:34:52 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Book created\",\n    \"data\": {\n        \"_id\": \"69dd293c1951e3277ab6287d\",\n        \"isbn\": \"9780743437318\",\n        \"title\": \"Pendragon: The Merchant of Death\",\n        \"author\": \"D.J. MacHale\",\n        \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\n        \"genre\": \"fiction\",\n        \"publishedDate\": \"2002-09-01T04:00:00.000Z\",\n        \"quantity\": 53,\n        \"price\": 14.99,\n        \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\",\n        \"createdAt\": \"2026-04-13T17:34:52.112Z\",\n        \"updatedAt\": \"2026-04-13T17:34:52.112Z\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Book 2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"9780807014271\",\r\n    \"title\": \"Man's Search for Meaning\",\r\n    \"author\": \"Viktor Frankl\",\r\n    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\r\n    \"genre\": \"non_fiction\",\r\n    \"publishedDate\": \"06/01/2006\",\r\n    \"quantity\": 59,\r\n    \"price\": 21.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:5000/api/books",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Book 2",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"9780807014271\",\r\n    \"title\": \"Man's Search for Meaning\",\r\n    \"author\": \"Viktor Frankl\",\r\n    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\r\n    \"genre\": \"non_fiction\",\r\n    \"publishedDate\": \"06/01/2006\",\r\n    \"quantity\": 59,\r\n    \"price\": 21.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:5000/api/books",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1705"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"6a9-fEtPAemPYZJ+sqEePMRh2WqobIU\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 17:35:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Book created\",\n    \"data\": {\n        \"_id\": \"69dd29681951e3277ab62882\",\n        \"isbn\": \"9780807014271\",\n        \"title\": \"Man's Search for Meaning\",\n        \"author\": \"Viktor Frankl\",\n        \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n        \"genre\": \"non_fiction\",\n        \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n        \"quantity\": 59,\n        \"price\": 21.99,\n        \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n        \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n        \"updatedAt\": \"2026-04-13T17:35:36.874Z\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"9780743437318\",\r\n    \"title\": \"Pendragon: The Merchant of Death\",\r\n    \"author\": \"D.J. MacHale\",\r\n    \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\r\n    \"genre\": \"fiction\",\r\n    \"publishedDate\": \"09/01/2002\",\r\n    \"quantity\": 53,\r\n    \"price\": 25.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books/69dd293c1951e3277ab6287d/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "books",
+            "69dd293c1951e3277ab6287d",
+            "update"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Book",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"9780743437318\",\r\n    \"title\": \"Pendragon: The Merchant of Death\",\r\n    \"author\": \"D.J. MacHale\",\r\n    \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\r\n    \"genre\": \"fiction\",\r\n    \"publishedDate\": \"09/01/2002\",\r\n    \"quantity\": 53,\r\n    \"price\": 25.99,\r\n    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books/69dd293c1951e3277ab6287d/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books",
+                "69dd293c1951e3277ab6287d",
+                "update"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1375"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"55f-q5FoqPTWX3o9/jaQrTF81Bz1lMk\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 17:37:35 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Book updated\",\n    \"data\": {\n        \"_id\": \"69dd293c1951e3277ab6287d\",\n        \"isbn\": \"9780743437318\",\n        \"title\": \"Pendragon: The Merchant of Death\",\n        \"author\": \"D.J. MacHale\",\n        \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\n        \"genre\": \"fiction\",\n        \"publishedDate\": \"2002-09-01T04:00:00.000Z\",\n        \"quantity\": 53,\n        \"price\": 25.99,\n        \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\",\n        \"createdAt\": \"2026-04-13T17:34:52.112Z\",\n        \"updatedAt\": \"2026-04-13T17:37:35.560Z\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Book Quantity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"quantity\": 67\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books/69dd293c1951e3277ab6287d/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "books",
+            "69dd293c1951e3277ab6287d",
+            "update"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Book Quantity",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"quantity\": 67\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books/69dd293c1951e3277ab6287d/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books",
+                "69dd293c1951e3277ab6287d",
+                "update"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1375"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"55f-9dw2KoQ2bl6XakoZTz6T/JjDf0o\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 17:37:54 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Book updated\",\n    \"data\": {\n        \"_id\": \"69dd293c1951e3277ab6287d\",\n        \"isbn\": \"9780743437318\",\n        \"title\": \"Pendragon: The Merchant of Death\",\n        \"author\": \"D.J. MacHale\",\n        \"description\": \"The first book in D.J. MacHale’s New York Times bestselling middle grade fantasy series about Bobby Pendragon, a regular kid who finds himself and his two friends pulled into epic adventures across worlds!\\n\\nBobby Pendragon is a seemingly normal fourteen-year-old boy. He has a family, a home, and even Marley, his beloved dog. But there is something very special about Bobby.\\n\\nHe is going to save the world.\\n\\nAnd not just Earth as we know it. Bobby is slowly starting to realize that life in the cosmos isn’t quite what he thought it was. And before he can object, he is swept off to an alternate dimension known as Denduron, a territory inhabited by strange beings, ruled by a magical tyrant, and plagued by dangerous revolution.\\n\\nIf Bobby wants to see his family again, he’s going to have to accept his role as savior—and accept it wholeheartedly. Because, as he is about to discover, Denduron is only the beginning\",\n        \"genre\": \"fiction\",\n        \"publishedDate\": \"2002-09-01T04:00:00.000Z\",\n        \"quantity\": 67,\n        \"price\": 25.99,\n        \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0743437314/1.jpg\",\n        \"createdAt\": \"2026-04-13T17:34:52.112Z\",\n        \"updatedAt\": \"2026-04-13T17:37:54.737Z\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Shipment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "b3d60525-901b-4662-bea2-96f3357c24c1",
+              "src": "postman-cloud:///1f13561e-bc23-4830-a1f4-84b1b6ecdf84"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/shipments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "shipments"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Shipment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "b3d60525-901b-4662-bea2-96f3357c24c1",
+                  "src": "/C:/Users/break/Documents/HUMBER/CPAN-212/CPAN-212-Final-Project-Phase-2/shipment.csv"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/shipments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "shipments"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "552"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"228-C+/aTB4l4a8v+wvLRmFONfIs6Z0\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 09 Apr 2026 21:20:14 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Shipment created\",\n    \"data\": {\n        \"_id\": \"69d8180ebae25cf77a6566fb\",\n        \"title\": \"ORDER-1775769614955-ATLN\",\n        \"contents\": [\n            {\n                \"isbn\": \"9780743437318\",\n                \"title\": \"Pendragon: The Merchant of Death\",\n                \"quantity\": 10,\n                \"createdAt\": \"2026-04-09T21:20:14.964Z\",\n                \"updatedAt\": \"2026-04-09T21:20:14.964Z\"\n            },\n            {\n                \"isbn\": \"9780807014271\",\n                \"title\": \"Man's Search for Meaning\",\n                \"quantity\": 11,\n                \"createdAt\": \"2026-04-09T21:20:14.965Z\",\n                \"updatedAt\": \"2026-04-09T21:20:14.965Z\"\n            }\n        ],\n        \"status\": \"ORDERED\",\n        \"createdAt\": \"2026-04-09T21:20:14.965Z\",\n        \"updatedAt\": \"2026-04-09T21:20:14.965Z\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Shipment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/shipments/69d9d2fcbe0aaed975561881",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "shipments",
+            "69d9d2fcbe0aaed975561881"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Shipment - Valid",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/shipments/69d8180ebae25cf77a6566fb",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "shipments",
+                "69d8180ebae25cf77a6566fb"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "57"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"39-LU2rclkYl7AeqqVzTPKegNitj7Q\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Apr 2026 04:47:40 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Shipment deleted\",\n    \"data\": null\n}"
+        },
+        {
+          "name": "Delete Shipment - Invalid Delete Request",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/shipments/69d9d2fcbe0aaed975561881",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "shipments",
+                "69d9d2fcbe0aaed975561881"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "80"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"50-Lly524jGU92e115c3sctFKqyUAw\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Apr 2026 15:52:46 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"Arrived Shipments cannot be deleted.\",\n    \"errors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Shipment Status",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"status\":\"PROCESSED\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/shipments/69d9d2fcbe0aaed975561881/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "shipments",
+            "69d9d2fcbe0aaed975561881",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Shopping Cart",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cart",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Shopping Cart",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cart",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2090"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"82a-/nUMg/AkhTtq/K5iMyYFOhBFl0A\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 22:29:37 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Cart loaded\",\n    \"data\": {\n        \"_id\": \"69dd653cc89a96ca7a58f73d\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [\n            {\n                \"book\": {\n                    \"_id\": \"69dd29681951e3277ab62882\",\n                    \"isbn\": \"9780807014271\",\n                    \"title\": \"Man's Search for Meaning\",\n                    \"author\": \"Viktor Frankl\",\n                    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n                    \"genre\": \"non_fiction\",\n                    \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n                    \"quantity\": 92,\n                    \"price\": 21.99,\n                    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n                    \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n                    \"updatedAt\": \"2026-04-13T17:48:36.254Z\",\n                    \"__v\": 0,\n                    \"id\": \"69dd29681951e3277ab62882\"\n                },\n                \"quantity\": 1,\n                \"price\": 21.99,\n                \"_id\": \"69dd6e1d8158d34f473a0f0b\",\n                \"id\": \"69dd6e1d8158d34f473a0f0b\"\n            }\n        ],\n        \"createdAt\": \"2026-04-13T21:50:52.534Z\",\n        \"updatedAt\": \"2026-04-13T22:29:24.583Z\",\n        \"__v\": 6,\n        \"subtotal\": 21.99,\n        \"taxAmount\": 2.86,\n        \"totalPrice\": 24.85,\n        \"id\": \"69dd653cc89a96ca7a58f73d\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Add Item to Cart",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"bookId\": \"69dd29681951e3277ab62882\",\r\n    \"quantity\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cart/add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "add"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add Item to Cart",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bookId\": \"69dd29681951e3277ab62882\",\r\n    \"quantity\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cart/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "add"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2096"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"830-JumPXagEUZAcsI15hTlDYJi52z8\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 22:28:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Item added to cart\",\n    \"data\": {\n        \"_id\": \"69dd653cc89a96ca7a58f73d\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [\n            {\n                \"book\": {\n                    \"_id\": \"69dd29681951e3277ab62882\",\n                    \"isbn\": \"9780807014271\",\n                    \"title\": \"Man's Search for Meaning\",\n                    \"author\": \"Viktor Frankl\",\n                    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n                    \"genre\": \"non_fiction\",\n                    \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n                    \"quantity\": 92,\n                    \"price\": 21.99,\n                    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n                    \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n                    \"updatedAt\": \"2026-04-13T17:48:36.254Z\",\n                    \"__v\": 0,\n                    \"id\": \"69dd29681951e3277ab62882\"\n                },\n                \"quantity\": 2,\n                \"price\": 21.99,\n                \"_id\": \"69dd6e1d8158d34f473a0f0b\",\n                \"id\": \"69dd6e1d8158d34f473a0f0b\"\n            }\n        ],\n        \"createdAt\": \"2026-04-13T21:50:52.534Z\",\n        \"updatedAt\": \"2026-04-13T22:28:45.699Z\",\n        \"__v\": 6,\n        \"subtotal\": 43.98,\n        \"taxAmount\": 5.72,\n        \"totalPrice\": 49.7,\n        \"id\": \"69dd653cc89a96ca7a58f73d\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Quantity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"bookId\": \"69dd29681951e3277ab62882\",\r\n    \"quantity\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cart/quantity",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "quantity"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Quantity",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bookId\": \"69dd29681951e3277ab62882\",\r\n    \"quantity\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cart/quantity",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "quantity"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2100"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"834-WeYR8trlZTxsvAWVdt+z0cY0Rg4\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 22:29:24 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Cart quantity updated\",\n    \"data\": {\n        \"_id\": \"69dd653cc89a96ca7a58f73d\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [\n            {\n                \"book\": {\n                    \"_id\": \"69dd29681951e3277ab62882\",\n                    \"isbn\": \"9780807014271\",\n                    \"title\": \"Man's Search for Meaning\",\n                    \"author\": \"Viktor Frankl\",\n                    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n                    \"genre\": \"non_fiction\",\n                    \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n                    \"quantity\": 92,\n                    \"price\": 21.99,\n                    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n                    \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n                    \"updatedAt\": \"2026-04-13T17:48:36.254Z\",\n                    \"__v\": 0,\n                    \"id\": \"69dd29681951e3277ab62882\"\n                },\n                \"quantity\": 1,\n                \"price\": 21.99,\n                \"_id\": \"69dd6e1d8158d34f473a0f0b\",\n                \"id\": \"69dd6e1d8158d34f473a0f0b\"\n            }\n        ],\n        \"createdAt\": \"2026-04-13T21:50:52.534Z\",\n        \"updatedAt\": \"2026-04-13T22:29:24.583Z\",\n        \"__v\": 6,\n        \"subtotal\": 21.99,\n        \"taxAmount\": 2.86,\n        \"totalPrice\": 24.85,\n        \"id\": \"69dd653cc89a96ca7a58f73d\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Clear Cart",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/cart/clear",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "clear"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Clear Cart",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cart/clear",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "clear"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "291"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"123-mIB1GP6ltUShVTWfeM+ZOdLlTfI\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Apr 2026 22:28:26 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Cart cleared\",\n    \"data\": {\n        \"_id\": \"69dd653cc89a96ca7a58f73d\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [],\n        \"createdAt\": \"2026-04-13T21:50:52.534Z\",\n        \"updatedAt\": \"2026-04-13T22:28:26.712Z\",\n        \"__v\": 5,\n        \"subtotal\": 0,\n        \"taxAmount\": 0,\n        \"totalPrice\": 0,\n        \"id\": \"69dd653cc89a96ca7a58f73d\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Assign Role",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"roles\":[\"CUSTOMER\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/rbac/users/69de98894840070216ea1099/roles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "rbac",
+            "users",
+            "69de98894840070216ea1099",
+            "roles"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Assign Role",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"roles\":[\"CUSTOMER\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/rbac/users/69de98894840070216ea1099/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "rbac",
+                "users",
+                "69de98894840070216ea1099",
+                "roles"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "301"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"12d-QcBtZSr9Ml9sOsqd3+MjavF9WKU\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 20:03:52 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Roles assigned\",\n    \"data\": {\n        \"_id\": \"69de98894840070216ea1099\",\n        \"username\": \"John\",\n        \"roles\": [\n            \"CUSTOMER\"\n        ],\n        \"profile\": {\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"email\": \"john.doe@gmail.com\",\n            \"userType\": \"CUSTOMER\"\n        },\n        \"createdAt\": \"2026-04-14T19:42:01.546Z\",\n        \"updatedAt\": \"2026-04-14T20:03:52.154Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Checkout",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/checkout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "checkout"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Checkout",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/checkout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "checkout"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2093"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"82d-aqe9mh0L/qklVyVddVpsSAyWQgE\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 01:03:19 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Checkout loaded\",\n    \"data\": {\n        \"_id\": \"69dee3d7beb2b9b02e295107\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [\n            {\n                \"book\": {\n                    \"_id\": \"69dd29681951e3277ab62882\",\n                    \"isbn\": \"9780807014271\",\n                    \"title\": \"Man's Search for Meaning\",\n                    \"author\": \"Viktor Frankl\",\n                    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n                    \"genre\": \"non_fiction\",\n                    \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n                    \"quantity\": 92,\n                    \"price\": 21.99,\n                    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n                    \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n                    \"updatedAt\": \"2026-04-13T17:48:36.254Z\",\n                    \"__v\": 0,\n                    \"id\": \"69dd29681951e3277ab62882\"\n                },\n                \"quantity\": 2,\n                \"price\": 21.99,\n                \"_id\": \"69dee24f52a50e0bbce8d9f8\",\n                \"id\": \"69dee24f52a50e0bbce8d9f8\"\n            }\n        ],\n        \"createdAt\": \"2026-04-15T01:03:19.842Z\",\n        \"updatedAt\": \"2026-04-15T01:03:19.842Z\",\n        \"__v\": 0,\n        \"subtotal\": 43.98,\n        \"taxAmount\": 5.72,\n        \"totalPrice\": 49.7,\n        \"id\": \"69dee3d7beb2b9b02e295107\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Cancel Checkout",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/checkout/cancel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "checkout",
+            "cancel"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Cancel Checkout",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/checkout/cancel",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "checkout",
+                "cancel"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "64"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"40-aQxuotG+7HwFu9MvK4AyWPCi/SM\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 01:03:13 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Cancellation Successful\",\n    \"data\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Purchase",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/checkout/purchase",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "checkout",
+            "purchase"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Purchase",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/checkout/purchase",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "checkout",
+                "purchase"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2097"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"831-z3mGZVSWBMoRsUX0tKBw1rxu1JA\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 01:17:32 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Purchase Successful\",\n    \"data\": {\n        \"_id\": \"69dee72c2122ac9bb81b6ded\",\n        \"user\": \"69cb03b6bbcd9d40c222265c\",\n        \"contents\": [\n            {\n                \"book\": {\n                    \"_id\": \"69dd29681951e3277ab62882\",\n                    \"isbn\": \"9780807014271\",\n                    \"title\": \"Man's Search for Meaning\",\n                    \"author\": \"Viktor Frankl\",\n                    \"description\": \"This seminal book, which has been called “one of the outstanding contributions to psychological thought” by Carl Rogers and “one of the great books of our time” by Harold Kushner, has been translated into more than fifty languages and sold over sixteen million copies. “An enduring work of survival literature,” according to the New York Times, Viktor Frankl’s riveting account of his time in the Nazi concentration camps, and his insightful exploration of the human will to find meaning in spite of the worst adversity, has offered solace and guidance to generations of readers since it was first published in 1946. At the heart of Frankl’s theory of logotherapy (from the Greek word for “meaning”) is a conviction that the primary human drive is not pleasure, as Freud maintained, but rather the discovery and pursuit of what the individual finds meaningful. Today, as new generations face new challenges and an ever more complex and uncertain world, Frankl’s classic work continues to inspire us all to find significance in the very act of living, in spite of all obstacles.\\n\\nA must-read companion to this classic work, a new, never-before-published work by Frankl entitled Yes to Life: In Spite of Everything, is now available in English.\",\n                    \"genre\": \"non_fiction\",\n                    \"publishedDate\": \"2006-06-01T04:00:00.000Z\",\n                    \"quantity\": 90,\n                    \"price\": 21.99,\n                    \"coverImg\": \"https://dynamic.indigoimages.ca/v1/books/books/0807014273/1.jpg\",\n                    \"createdAt\": \"2026-04-13T17:35:36.874Z\",\n                    \"updatedAt\": \"2026-04-15T01:17:05.114Z\",\n                    \"__v\": 0,\n                    \"id\": \"69dd29681951e3277ab62882\"\n                },\n                \"quantity\": 2,\n                \"price\": 21.99,\n                \"_id\": \"69dee24f52a50e0bbce8d9f8\",\n                \"id\": \"69dee24f52a50e0bbce8d9f8\"\n            }\n        ],\n        \"createdAt\": \"2026-04-15T01:17:32.932Z\",\n        \"updatedAt\": \"2026-04-15T01:17:32.932Z\",\n        \"__v\": 0,\n        \"subtotal\": 43.98,\n        \"taxAmount\": 5.72,\n        \"totalPrice\": 49.7,\n        \"id\": \"69dee72c2122ac9bb81b6ded\"\n    }\n}"
+        },
+        {
+          "name": "Purchase - Empty cart",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jane.doe@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/checkout/purchase",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "checkout",
+                "purchase"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "105"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"69-2wlPy8Ltw0RQOexgMy0dTHY59G4\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 01:20:57 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"Cart is empty. Please add items before proceeding to checkout\",\n    \"errors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Admin Create User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Test2\",\r\n    \"fullName\": \"John Doe\",\r\n    \"password\": \"Pasword123!\",\r\n    \"email\": \"Test2@example.com\",\r\n    \"roles\": [\"CUSTOMER\"],\r\n    \"status\":\"ACTIVE\",\r\n    \"userType\":\"CUSTOMER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin Create User",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Test2\",\r\n    \"fullName\": \"John Doe\",\r\n    \"password\": \"Pasword123!\",\r\n    \"email\": \"Test2@example.com\",\r\n    \"roles\": [\"CUSTOMER\"],\r\n    \"status\":\"ACTIVE\",\r\n    \"userType\":\"CUSTOMER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "349"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"15d-9pWv1Hu2g9t4zfelRXzThBn0f0g\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 18:46:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"User created\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"Test2\",\n            \"roles\": [\n                \"69cb03b5de24f8ec28e57c2b\"\n            ],\n            \"accountStatus\": \"ACTIVE\",\n            \"profile\": {\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"email\": \"test2@example.com\",\n                \"userType\": \"CUSTOMER\"\n            },\n            \"_id\": \"69dfdd15bd7d1470d16e34f5\",\n            \"createdAt\": \"2026-04-15T18:46:45.543Z\",\n            \"updatedAt\": \"2026-04-15T18:46:45.543Z\"\n        }\n    }\n}"
+        },
+        {
+          "name": "Admin Create User - Taken Username",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Test2\",\r\n    \"fullName\": \"John Doe\",\r\n    \"password\": \"Pasword123!\",\r\n    \"email\": \"Test2@example.com\",\r\n    \"roles\": [\"CUSTOMER\"],\r\n    \"status\":\"ACTIVE\",\r\n    \"userType\":\"CUSTOMER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "66"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"42-mge8gDp/fJkZb5u2BtfVkREaBr8\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 18:47:04 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"Username already taken\",\n    \"errors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Admin Update User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Test2-updated\",\r\n    \"fullName\": \"John Doe\",\r\n    \"email\": \"Test2@example.com\",\r\n    \"roles\": [\"CUSTOMER\"],\r\n    \"status\":\"ACTIVE\",\r\n    \"userType\":\"CUSTOMER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/users/69dfdd15bd7d1470d16e34f5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "users",
+            "69dfdd15bd7d1470d16e34f5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin Update User",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Test2-updated\",\r\n    \"fullName\": \"John Doe\",\r\n    \"email\": \"Test2@example.com\",\r\n    \"roles\": [\"CUSTOMER\"],\r\n    \"status\":\"ACTIVE\",\r\n    \"userType\":\"CUSTOMER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/users/69dfdd15bd7d1470d16e34f5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "69dfdd15bd7d1470d16e34f5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "332"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"14c-Keac12FX/YqznABd/4POs2WsFc8\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 18:52:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"User updated\",\n    \"data\": {\n        \"_id\": \"69dfdd15bd7d1470d16e34f5\",\n        \"username\": \"Test2-updated\",\n        \"roles\": [\n            \"CUSTOMER\"\n        ],\n        \"accountStatus\": \"ACTIVE\",\n        \"profile\": {\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"email\": \"test2@example.com\",\n            \"userType\": \"CUSTOMER\"\n        },\n        \"createdAt\": \"2026-04-15T18:46:45.543Z\",\n        \"updatedAt\": \"2026-04-15T18:52:48.278Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Admin Update User Password",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"password\":\"Test123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/users/69dfdd15bd7d1470d16e34f5/password",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "users",
+            "69dfdd15bd7d1470d16e34f5",
+            "password"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin Update User Password",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"password\":\"Test123!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/users/69dfdd15bd7d1470d16e34f5/password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "69dfdd15bd7d1470d16e34f5",
+                "password"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "341"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"155-b005OHwjfwjC4iWhMpuAo4dDUqI\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 18:57:10 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"User password updated\",\n    \"data\": {\n        \"_id\": \"69dfdd15bd7d1470d16e34f5\",\n        \"username\": \"Test2-updated\",\n        \"roles\": [\n            \"CUSTOMER\"\n        ],\n        \"accountStatus\": \"ACTIVE\",\n        \"profile\": {\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"email\": \"test2@example.com\",\n            \"userType\": \"CUSTOMER\"\n        },\n        \"createdAt\": \"2026-04-15T18:46:45.543Z\",\n        \"updatedAt\": \"2026-04-15T18:57:10.475Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Test User login after Password update",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "Test User login after Password update",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Test2-updated\",\r\n    \"password\": \"Test123!\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "532"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"214-o5Q2/b9S/mD7nBIu6lXPpbbxduk\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 18:58:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWRmZGQxNWJkN2QxNDcwZDE2ZTM0ZjUiLCJpYXQiOjE3NzYyNzk1MjEsImV4cCI6MTc3NjI4NjcyMX0.mvN2O8OyEj6YyPc2a7n9MXwyxbDDcUp8LbSh5bAA6jY\",\n        \"user\": {\n            \"_id\": \"69dfdd15bd7d1470d16e34f5\",\n            \"username\": \"Test2-updated\",\n            \"roles\": [\n                \"CUSTOMER\"\n            ],\n            \"accountStatus\": \"ACTIVE\",\n            \"profile\": {\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"email\": \"test2@example.com\",\n                \"userType\": \"CUSTOMER\"\n            },\n            \"createdAt\": \"2026-04-15T18:46:45.543Z\",\n            \"updatedAt\": \"2026-04-15T18:57:10.475Z\"\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Own Profile",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "Get Own Profile",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"customer1\",\r\n    \"password\": \"Password123!\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "profile",
+                "me"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "331"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"14b-wTSTbDGN1v465WzFbeS0XrJ9ItQ\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 19:04:50 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Profile loaded\",\n    \"data\": {\n        \"accountStatus\": \"ACTIVE\",\n        \"_id\": \"69cb03b6bbcd9d40c222265c\",\n        \"username\": \"admin1\",\n        \"roles\": [\n            \"ADMIN\"\n        ],\n        \"profile\": {\n            \"firstName\": \"Victoria\",\n            \"lastName\": \"Clark\",\n            \"email\": \"admin1@example.com\",\n            \"userType\": \"INTERNAL\"\n        },\n        \"createdAt\": \"2026-03-30T23:13:58.188Z\",\n        \"updatedAt\": \"2026-03-30T23:13:58.188Z\"\n    }\n}"
+        },
+        {
+          "name": "Get Own Profile - After Update",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"customer1\",\r\n    \"password\": \"Password123!\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "profile",
+                "me"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "328"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"148-LFKa77BTHaLyJ8lDLMTLzpR5bSc\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 20:04:17 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Profile loaded\",\n    \"data\": {\n        \"_id\": \"69cb03b6bbcd9d40c222265c\",\n        \"username\": \"admin1\",\n        \"roles\": [\n            \"ADMIN\"\n        ],\n        \"profile\": {\n            \"firstName\": \"Vicky\",\n            \"lastName\": \"Clark\",\n            \"email\": \"admin1@example.com\",\n            \"userType\": \"INTERNAL\"\n        },\n        \"createdAt\": \"2026-03-30T23:13:58.188Z\",\n        \"updatedAt\": \"2026-04-15T19:06:24.793Z\",\n        \"accountStatus\": \"ACTIVE\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Own profile",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "Update Own profile",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\":\"Vicky\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "profile",
+                "me"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3000"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "329"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"149-HTC/Ii1cuYlaBtqPxD785+g9C5k\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Apr 2026 19:06:24 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Profile updated\",\n    \"data\": {\n        \"_id\": \"69cb03b6bbcd9d40c222265c\",\n        \"username\": \"admin1\",\n        \"roles\": [\n            \"ADMIN\"\n        ],\n        \"profile\": {\n            \"firstName\": \"Vicky\",\n            \"lastName\": \"Clark\",\n            \"email\": \"admin1@example.com\",\n            \"userType\": \"INTERNAL\"\n        },\n        \"createdAt\": \"2026-03-30T23:13:58.188Z\",\n        \"updatedAt\": \"2026-04-15T19:06:24.793Z\",\n        \"accountStatus\": \"ACTIVE\"\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "custToken",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
