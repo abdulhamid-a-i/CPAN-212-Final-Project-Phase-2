@@ -2,7 +2,7 @@
 
 # Backend 
 
-Secure insurance platform backend API.
+Secure Book management platform backend API.
 
 ## Stack
 
