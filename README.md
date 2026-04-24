@@ -1,5 +1,7 @@
 # CPAN-212-Final-Project-Phase-2
 
+Team: Abdulhamid Weheliye (n01756626, Section A), Mbaye Fall (n01764121, Section A), Cheyenne Hunsley (N01747035, Section A), Bandanpreet Kaur Malhi (n01726650, Section A), Laura Sofia Santana Acosta (N01737339,Section B)
+
 # Backend 
 
 Secure Book management platform backend API.
